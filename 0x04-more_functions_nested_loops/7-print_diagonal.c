@@ -2,7 +2,7 @@
 
 /**
   * print_diagonal - prints a diagonal line with \
-  * @n: the "length" of the diagonal line
+  * @n: the length of the diagonal line
   */
 void print_diagonal(int n)
 {
