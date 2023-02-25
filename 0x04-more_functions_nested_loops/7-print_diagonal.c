@@ -23,8 +23,5 @@ void print_diagonal(int n)
 		y--;
 	}
 
-	if (x < 1)
-	{
-		_putchar('\n');
-	}
+	_putchar('\n');
 }
