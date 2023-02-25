@@ -1,4 +1,9 @@
-#include <stdio.h> /** * fizz_buzz - look up the details of the program lol */
+#include <stdio.h>
+
+/**
+ * main - look up fizzbuzz lol
+ * Return: returns 0
+ */
 int main(void)
 {
 	int i;
@@ -17,7 +22,7 @@ int main(void)
 		{
 			printf("Fizz ");
 		}
-		else 
+		else
 		{
 			printf("%d ", i);
 		}
