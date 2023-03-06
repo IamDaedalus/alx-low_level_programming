@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
   * _strchr - finds the first occurence of a char in a str
