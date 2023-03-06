@@ -2,7 +2,7 @@
 
 /**
   * leet - turns the input into leet
-  * @char: the incoming text
+  * @str: the incoming text
   * Return: returns the leet code
   */
 char *leet(char *str)
@@ -16,7 +16,7 @@ char *leet(char *str)
 	{
 		for (k = 0; k <= 9; k++)
 		{
-			if(key[k] == str[i])
+			if (key[k] == str[i])
 			{
 				str[i] = map[k];
 			}
