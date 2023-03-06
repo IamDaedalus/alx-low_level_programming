@@ -2,15 +2,13 @@
 
 char *_strchr(char *s, char b)
 {
-	int i, len = 0;
-
-	while (s[len] != '\0')
-		len++;
-
-	for (i = 0; i <= len; i++)
+	while (*s != '\0')
 	{
-		if (s[i] == b)
-			return (&s[i]);
+		if (*s == b)
+		{
+			return (s);
+		}
+		s++;
 	}
 
 	return (NULL);
