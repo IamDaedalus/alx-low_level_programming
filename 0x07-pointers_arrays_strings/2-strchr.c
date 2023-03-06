@@ -4,7 +4,7 @@
 /**
   * _strchr - finds the first occurence of a char in a str
   * @s: the str to check
-  * @b: the character to check
+  * @c: the character to check
   * Return: returns the char if found or null if not
   */
 char *_strchr(char *s, char c)
