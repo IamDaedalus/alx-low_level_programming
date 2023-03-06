@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
   * _strchr - finds the first occurence of a char in a str
@@ -6,11 +7,11 @@
   * @b: the character to check
   * Return: returns the char if found or null if not
   */
-char *_strchr(char *s, char b)
+char *_strchr(char *s, char c)
 {
 	while (*s != '\0')
 	{
-		if (*s == b)
+		if (*s == c)
 		{
 			return (s);
 		}
