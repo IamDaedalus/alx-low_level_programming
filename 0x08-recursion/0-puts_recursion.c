@@ -14,6 +14,6 @@ void _puts_recursion(char *s)
 	{
 		_putchar(*s);
 		/* the line below is similar to the resource video's */
-		_puts_recursion(s++);
+		_puts_recursion(++s);
 	}
 }
