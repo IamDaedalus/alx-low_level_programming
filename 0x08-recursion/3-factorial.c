@@ -13,5 +13,5 @@ int factorial(int n)
 		return (1);
 
 	/* n is reduced every call to the function which makes it work */
-	return n * factorial(n - 1);
+	return (n * factorial(n - 1));
 }
