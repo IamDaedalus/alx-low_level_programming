@@ -10,15 +10,19 @@
   */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
 	/* get the length of both strings ans setup iterator */
 	unsigned int s1_len = get_str_len(s1), s2_len = get_str_len(s2);
+	char *ptr;
 	unsigned int i, j;
 
 	if (n < s2_len)
 	{
 		/*ptr = malloc((s1_len + n));		 allocate for first str and n */
 		ptr = malloc(sizeof(s1) + n);
+
+		/* always check if the malloc worked */
+		if (ptr == NULL)
+			return (NULL);
 
 		/* the var i is the index of the return pointer don't forget */
 		for (i = 0; i < s1_len; i++)
@@ -35,6 +39,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		/* ptr = malloc((s1_len + s2_len)); */
 		ptr = malloc(sizeof(s1) + sizeof(s2));
+		/* always check if the malloc worked */
+		if (ptr == NULL)
+			return (NULL);
 
 		for (i = 0; i < s1_len; i++)
 			ptr[i] = s1[i];
@@ -57,6 +64,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 int get_str_len(char *str)
 {
 	int i = 0;
+
+	if (str == NULL)
+		str = "";
 
 	while (*str != '\0')
 	{
