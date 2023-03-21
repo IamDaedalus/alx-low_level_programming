@@ -9,6 +9,7 @@
   *
   * Description: this holds the contents for declaring the dog struct
   */
+typedef struct dog dog_t;
 struct dog
 {
 	char *name;
