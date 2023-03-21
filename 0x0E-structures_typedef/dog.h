@@ -3,9 +3,9 @@
 
 /**
   * struct dog - holds content for declaring a dog struct
-  * @name: name of the doggy
-  * @age: how old is the doggy
-  * @owner: who takes care of the dog boy
+  * @name: first member
+  * @age: second member
+  * @owner: third member
   *
   * Description: this holds the contents for declaring the dog struct
   */
