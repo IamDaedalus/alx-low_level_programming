@@ -5,5 +5,7 @@
   */
 void print_name(char *name, void (*f)(char *))
 {
-	(*f)(name);
+	/* you really can't trust anyone huh! you need to make checks here too */
+	if (name && f)
+		(*f)(name);
 }
