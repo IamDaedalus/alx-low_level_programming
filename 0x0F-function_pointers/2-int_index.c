@@ -1,6 +1,11 @@
+#include "function_pointers.h"
+
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i, result;
+
+	if (size <= 0)
+		return (-1);
 
 	if (array && size > 0 && cmp)
 	{
@@ -8,11 +13,10 @@ int int_index(int *array, int size, int (*cmp)(int))
 		{
 			if (cmp(array[i]) != 0)
 			{
-				result = i;
-				break;
+				return (i);
 			}
 		}
 	}
 
-	return (result);
+	return (-1);
 }
