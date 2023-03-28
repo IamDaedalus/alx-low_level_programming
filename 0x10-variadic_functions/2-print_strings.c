@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+/**
+  * print_strings - prints a set of strings passed to the function
+  * @separator: the seperator for the strings
+  * @n: number of passed arguments to iterate over
+  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list args;
