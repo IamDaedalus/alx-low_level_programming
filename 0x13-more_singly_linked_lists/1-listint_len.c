@@ -13,7 +13,7 @@ size_t listint_len(const listint_t *h)
 	const listint_t *current;
 
 	if (h == NULL)
-		return (NULL);
+		return (1);
 	else if (h != NULL)
 		current = h;
 
