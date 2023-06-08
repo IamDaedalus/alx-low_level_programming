@@ -1,26 +1,31 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * sqrt_a - sqrt recursion helper 
+ * @a: input
+ * @b: input
+ * Return: 0
  */
-int main(void)
+int sqrt_a(int a, int b)
 {
-    int r;
-
-    r = _pow_recursion(1, 10);
-    printf("%d\n", r);
-    r = _pow_recursion(1024, 0);
-    printf("%d\n", r);
-    r = _pow_recursion(2, 16);
-    printf("%d\n", r);
-    r = _pow_recursion(5, 2);
-    printf("%d\n", r);
-    r = _pow_recursion(5, -2);
-    printf("%d\n", r);
-    r = _pow_recursion(-5, 3);
-    printf("%d\n", r);
-    return (0);
+	if (b * b == a)
+	{
+		return (b);
+	}
+	else if (b * b > a)
+	{
+		return (-1);
+	}
+	return (sqrt_a(a, b + 1));
 }
+
+/**
+ * _sqrt_recursion - the sqrt of n
+ * @n: input
+ * Return: 0
+ */
+int _sqrt_recursion(int n)
+{
+	return (sqrt_a(n, 0));
+}
+
