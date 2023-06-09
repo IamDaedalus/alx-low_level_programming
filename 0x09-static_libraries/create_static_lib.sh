@@ -1,7 +1,8 @@
-#!/bin/bash/
+#!/bin/bash
 
-# compile and generate a static library from C files
-
+# compile files
 gcc -c *.c
-ar rc liball.a *.o
-rm *.o
+# create static library from obj files
+ar rcs liball.a *.o
+# remove all object files after
+ rm *.o
