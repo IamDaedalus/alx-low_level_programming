@@ -3,5 +3,6 @@
 
 int _putchar(char h);
 int build_num(const char *in);
+int coins_count(int amount);
 
 #endif
