@@ -19,7 +19,10 @@ int main(int argc, char *argv[])
 	{
 		int input = atoi(argv[1]);
 
-		printf("%d\n", coins_count(input));
+		if (input < 0)
+			printf("0\n");
+		else
+			printf("%d\n", coins_count(input));
 	}
 
 	return (0);
