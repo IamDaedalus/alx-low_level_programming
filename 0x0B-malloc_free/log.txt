@@ -1,0 +1,71 @@
+==941827== Memcheck, a memory error detector
+==941827== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==941827== Using Valgrind-3.21.0 and LibVEX; rerun with -h for copyright info
+==941827== Command: ./a.out I
+==941827== 
+==941827== Conditional jump or move depends on uninitialised value(s)
+==941827== 
+==941827== Invalid write of size 1
+==941827==  Address 0x4a7604b is 0 bytes after a block of size 11 alloc'd
+==941827==    at 0x4841848: malloc (vg_replace_malloc.c:431)
+==941827== 
+==941827== Invalid read of size 1
+==941827==  Address 0x4a76051 is 6 bytes after a block of size 11 alloc'd
+==941827==    at 0x4841848: malloc (vg_replace_malloc.c:431)
+==941827== 
+==941827== Invalid write of size 1
+==941827==  Address 0x4a76051 is 6 bytes after a block of size 11 alloc'd
+==941827==    at 0x4841848: malloc (vg_replace_malloc.c:431)
+==941827==    by 0x1091E7: argstostr (in /home/daedalus/projects/alx/alx-low_level_programming/0x0B-malloc_free/a.out)
+==941827== 
+==941827== Invalid read of size 1
+==941827==    at 0x4847ED4: strlen (vg_replace_strmem.c:501)
+==941827==    by 0x48E42A7: __printf_buffer (vfprintf-process-arg.c:435)
+==941827==    by 0x48E4A01: __vfprintf_internal (vfprintf-internal.c:1459)
+==941827==    by 0x48DA13E: printf (printf.c:33)
+==941827==  Address 0x4a7604b is 0 bytes after a block of size 11 alloc'd
+==941827==    at 0x4841848: malloc (vg_replace_malloc.c:431)
+==941827== 
+==941827== Invalid read of size 2
+==941827==    at 0x484C0D0: memmove (vg_replace_strmem.c:1400)
+==941827==    by 0x48DAAB8: __printf_buffer_write (Xprintf_buffer_write.c:39)
+==941827==    by 0x48E2C74: __printf_buffer (vfprintf-process-arg.c:501)
+==941827==    by 0x48E4A01: __vfprintf_internal (vfprintf-internal.c:1459)
+==941827==    by 0x48DA13E: printf (printf.c:33)
+==941827==  Address 0x4a76050 is 5 bytes after a block of size 11 alloc'd
+==941827==    at 0x4841848: malloc (vg_replace_malloc.c:431)
+==941827==    by 0x1091E7: argstostr (in /home/daedalus/projects/alx/alx-low_level_programming/0x0B-malloc_free/a.out)
+==941827== 
+==941827== Syscall param write(buf) points to uninitialised byte(s)
+==941827==    at 0x4982BC4: write (write.c:26)
+==941827==    by 0x490781C: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1180)
+==941827==    by 0x4906BA3: new_do_write (fileops.c:448)
+==941827==    by 0x4908858: _IO_do_write@@GLIBC_2.2.5 (fileops.c:425)
+==941827==    by 0x490A690: _IO_flush_all_lockp (genops.c:706)
+==941827==    by 0x490AC4E: _IO_cleanup (genops.c:866)
+==941827==    by 0x48C5168: __run_exit_handlers (exit.c:132)
+==941827==    by 0x48C51AF: exit (exit.c:141)
+==941827==    by 0x48AC856: (below main) (libc_start_call_main.h:74)
+==941827==  Address 0x4a7609b is 11 bytes inside a block of size 4,096 alloc'd
+==941827==    at 0x4841848: malloc (vg_replace_malloc.c:431)
+==941827==    by 0x48FAC10: _IO_file_doallocate (filedoalloc.c:101)
+==941827==    by 0x4909D1F: _IO_doallocbuf (genops.c:347)
+==941827==    by 0x4909D1F: _IO_doallocbuf (genops.c:342)
+==941827==    by 0x4908D87: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+==941827==    by 0x4907EBD: _IO_new_file_xsputn (fileops.c:1243)
+==941827==    by 0x4907EBD: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==941827==    by 0x48DA998: __printf_buffer_flush_to_file (printf_buffer_to_file.c:59)
+==941827==    by 0x48DAA53: __printf_buffer_to_file_done (printf_buffer_to_file.c:120)
+==941827==    by 0x48E4A09: __vfprintf_internal (vfprintf-internal.c:1460)
+==941827==    by 0x48DA13E: printf (printf.c:33)
+==941827== 
+==941827== 
+==941827== HEAP SUMMARY:
+==941827==     in use at exit: 0 bytes in 0 blocks
+==941827==   total heap usage: 2 allocs, 2 frees, 4,107 bytes allocated
+==941827== 
+==941827== All heap blocks were freed -- no leaks are possible
+==941827== 
+==941827== Use --track-origins=yes to see where uninitialised values come from
+==941827== For lists of detected and suppressed errors, rerun with: -s
+==941827== ERROR SUMMARY: 19 errors from 7 contexts (suppressed: 0 from 0)
