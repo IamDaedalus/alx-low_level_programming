@@ -1,0 +1,14 @@
+comments for 3-alloc_grid.c
+line 29
+
+			/*
+			 * clean up previously allocated memory if on this
+			 * iteration the malloc fails for any reason
+			 */
+lin 30
+			/*
+			 * necessary check to make sure we freeing valid memory
+			 * valid why? maybe malloc fails on iteration 1 (i.e 0)
+			 * based on h - 1, it's -1, so we simply free result
+			 * instead of non existent previous memory
+			 */
