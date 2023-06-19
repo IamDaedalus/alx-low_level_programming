@@ -2,28 +2,32 @@
 #include <stdlib.h>
 
 /**
-  * array_range - creates an array of ints
-  * @min: the min number of elements
-  * @max: the max number of elements
-  * Return: the array
-  */
+ * array_range - creates an array and fills it with ints
+ * @min: the smallest number in the array
+ * @max: the largest number in the array
+ * Return: returns an array of size (max - min) with elements starting
+ * from min and incremented to max
+ */
 int *array_range(int min, int max)
 {
-	int *arr;
+	int *result;
 	int i;
 
 	if (min > max)
 		return (NULL);
 
-	arr = malloc((max - min + 1) * sizeof(int));
-	if (arr == NULL)
+	result = malloc(sizeof(int) * (max - min + 1));
+	if (!result)
 		return (NULL);
 
-	for (i = 0; min <= max; i++)
+	i = 0;
+	while (min <= max)
 	{
-		arr[i] = min;
+		result[i] = min;
 		min++;
+		i++;
 	}
 
-	return (arr);
+	return (result);
+
 }

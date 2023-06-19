@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 		printf("%lu\n", first);
 		printf("%lu\n", second);
 		*/
-		printf("answer is %lu\n", mul(first, second));
+		printf("%lu\n", mul(first, second));
 	}
 	else
 	{
