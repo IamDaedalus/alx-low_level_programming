@@ -10,22 +10,16 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *n, *o;
 	dog_t *result;
 
-	n = !name ? NULL : name;
-	o = !owner ? NULL : owner;
-
-	if (!n || !o)
-		return (NULL);
-
 	result = malloc(sizeof(dog_t));
-	if (!result)
+
+	if (result == NULL)
 		return (NULL);
 
-	result->name = n;
+	result->name = name;
 	result->age = age;
-	result->owner = o;
+	result->owner = owner;
 
 	return (result);
 }
