@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 int main(int argc, char *argv[])
 {
@@ -11,11 +10,11 @@ int main(int argc, char *argv[])
 		first = build_digit(argv[1]);
 		second = build_digit(argv[2]);
 
+		print(
 		/*
 		printf("%lu\n", first);
 		printf("%lu\n", second);
 		*/
-		printf("%lu\n", mul(first, second));
 	}
 	else
 	{
@@ -39,7 +38,6 @@ void print(char *msg)
 		msg++;
 	}
 
-	_putchar('\n');
 }
 
 unsigned long build_digit(char *in)
