@@ -9,26 +9,24 @@
  */
 void print_numbers(const char *seperator, const unsigned int n, ...)
 {
-	if (n == 0)
-		return;
-
 	unsigned int i = 0;
 	va_list list;
-	const char *out = !seperator ? "" : seperator;
+	const char *out = seperator;
 
 	va_start(list, n);
-
-	while (i < n)
+	if (n > 0)
 	{
-		/* check if i is not on the last arg before printing */
-		if (i != (n - 1))
-			printf("%d%s", va_arg(list, int), out);
-		else
+		while (i < n)
+		{
 			printf("%d", va_arg(list, int));
 
-		i++;
+			/* check if i is not on the last arg before printing */
+			if (i != (n - 1) && out != NULL)
+				printf("%s", out);
+
+			i++;
+		}
 	}
 	va_end(list);
-
 	printf("\n");
 }
