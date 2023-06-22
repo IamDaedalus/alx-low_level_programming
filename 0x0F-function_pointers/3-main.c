@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Error... not enough args\n");
+		printf("Error\n");
 		return (98);
 	}
 
@@ -24,10 +24,10 @@ int main(int argc, char *argv[])
 	operator = argv[2];
 
 		/* check if the operator actually exists or if it is a valid string */
-	if (get_op_func(operator) == NULL)
+	if (!get_op_func(operator) || operator[1] != '\0')
 	{
-		printf("Error... operator not supported\n");
-		exit(EXIT_FAILURE);
+		printf("Error\n");
+		exit(99);
 	}
 
 	/**
@@ -35,10 +35,10 @@ int main(int argc, char *argv[])
 	  * or doing mod work with 0. the reason is it returns an error
 	  * so we just send our own error message
 	  */
-	if ((*operator == '%' || *operator == '/') && (a == 0 || b == 0))
+	if ((*operator == '/' || *operator == '%') && (a == 0 || b == 0))
 	{
-		printf("Error... division or mod by 0 not allowed\n");
-		exit(98);
+		printf("Error\n");
+		exit(100);
 	}
 
 	final = get_op_func(operator)(a, b);
