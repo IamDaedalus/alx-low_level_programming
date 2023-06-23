@@ -11,25 +11,25 @@ void print_strings(const char *seperator, const unsigned int n, ...)
 {
 	va_list list;
 	unsigned int i = 0;
-	const char *out = seperator ? seperator : "";
-	char *str;
+	char *cur_str;
+	const char *out;
 
 	if (n <= 0)
 		return;
 
 	va_start(list, n);
-
+	out = seperator;
 	while (i < n)
 	{
-		str = va_arg(list, char *);
+		cur_str = va_arg(list, char *);
 
-		if (str)
-			printf("%s", str);
+		if (cur_str != NULL)
+			printf("%s", cur_str);
 		else
 			printf("(nil)");
 
-		if (i < (n - 1))
-			printf("%s", seperator);
+		if (i < n - 1 && out != NULL)
+			printf("%s", out);
 
 		i++;
 	}
